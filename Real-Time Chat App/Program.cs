@@ -1,3 +1,4 @@
+using Real_Time_Chat_App.DataService;
 using Real_Time_Chat_App.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,7 @@ builder.Services.AddCors(opt =>
         .AllowCredentials();
     });
 });
+builder.Services.AddSingleton<SharedDb>();
 
 var app = builder.Build();
 
